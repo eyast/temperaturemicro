@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: myingress
+  labels:
+      name: myingress
+spec:
+  rules:
+  - host: eyas.d4dd5865e2684908bedc.australiaeast.aksapp.io
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: front-end-clusterip
+          servicePort: 80
